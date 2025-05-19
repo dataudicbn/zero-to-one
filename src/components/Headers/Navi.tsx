@@ -26,37 +26,44 @@ export default function Navi() {
                         <div>
                             <p className="text-white"> | </p>
                         </div>
-                        <div className="flex justify-center">
-                            <div>
+                        <div
+                            className="flex  justify-center 
+                         "
+                        >
+                            <div className="">
                                 <DropDown
                                     label={"New Arrived"}
                                     subTitle1={""}
                                     subTitle2={""}
                                     subTitle3={""}
+                                    className={""}
                                 />
                             </div>
-                            <div>
+                            <div className="w-18">
                                 <DropDown
                                     label={"Men"}
                                     subTitle1={""}
                                     subTitle2={""}
                                     subTitle3={""}
+                                    className={""}
                                 />
                             </div>
-                            <div>
+                            <div className="w-22">
                                 <DropDown
                                     label={"Woman"}
                                     subTitle1={""}
                                     subTitle2={""}
                                     subTitle3={""}
+                                    className={""}
                                 />
                             </div>
-                            <div>
+                            <div className="w-18">
                                 <DropDown
                                     label={"Kid"}
                                     subTitle1={""}
                                     subTitle2={""}
                                     subTitle3={""}
+                                    className={""}
                                 />
                             </div>
                         </div>

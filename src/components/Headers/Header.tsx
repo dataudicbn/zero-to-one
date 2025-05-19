@@ -4,7 +4,7 @@ import Navi from "./Navi";
 import Banner from "./Ban";
 export default function Header() {
     return (
-        <div className="w-full">
+        <div className="w-full ">
             <h1>
                 <Navi />
             </h1>

@@ -10,6 +10,7 @@ type DropDownProps = {
     subTitle1: string;
     subTitle2: string;
     subTitle3: string;
+    className?: string;
 };
 
 export default function Example({
@@ -17,13 +18,16 @@ export default function Example({
     subTitle1,
     subTitle2,
     subTitle3,
+    className = "",
 }: DropDownProps) {
     return (
-        <div className="top-24 w-20 text-center">
+        <div className="top-24 w-32 ">
             <Menu __demoMode>
-                <MenuButton className="inline-flex items-center gap-2 py-1.5 text-sm/6 font-semibold text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white cursor-pointer  data-open:bg-white data-open:text-black data-open:px-2 data-open:rounded">
+                <MenuButton
+                    className={` inline-flex items-center gap-2 py-1.5 text-sm/6 font-semibold text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white cursor-pointer data-open:text-white  data-open:rounded ${className} `}
+                >
                     {label}
-                    <ChevronDownIcon className="size-4 fill-white/60 data-open:text-black" />
+                    <ChevronDownIcon className="size-4 fill-white/60 data-open:text-white" />
                 </MenuButton>
 
                 <MenuItems
