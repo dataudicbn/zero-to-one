@@ -4,13 +4,15 @@ import Navi from "./Navi";
 import Banner from "./Ban";
 export default function Header() {
     return (
-        <div>
+        <div className="w-full">
             <h1>
                 <Navi />
             </h1>
-            <h1>
-                <Banner />
-            </h1>
+            <div className="flex w-full">
+                <div className="w-full">
+                    <Banner />
+                </div>
+            </div>
         </div>
     );
 }
