@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import DropDown from "../DropDown";
+import Sign from "../SignIn";
 
 export default function Navi() {
     return (
@@ -13,7 +14,7 @@ export default function Navi() {
                 </div>
             </div>
             <div className="bg-[#1b1b1b] h-20 flex items-center">
-                <div className="flex items-center">
+                <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-3">
                         <div>
                             <Image
@@ -68,7 +69,47 @@ export default function Navi() {
                             </div>
                         </div>
                     </div>
-                    <div>sign in</div>
+                    <div className="flex">
+                        <div>
+                            <Image
+                                src="./images/icons/heart.svg"
+                                alt={""}
+                                width={24}
+                                height={24}
+                            />
+                        </div>
+                        <div>
+                            <Image
+                                src="./images/logos/ShoppingCart.svg"
+                                alt=""
+                                width={24}
+                                height={24}
+                            />
+                        </div>
+                        <div>
+                            <Sign
+                                SignInSignUp={"Sign In"}
+                                Logo={"./images/logos/SneakerLogo.svg"}
+                                Title={"Welcome back"}
+                                Subtitle={
+                                    "Please enter your detail and find your look"
+                                }
+                                Email={"Email"}
+                                ConfirmEmail={"hidden"}
+                                Pass={""}
+                                ConfirmPass={`hidden`}
+                                Remember={"Remember "}
+                                ForgetP={"Forot Password"}
+                                ButtonSign={"Sign In"}
+                                LogoG={""}
+                                NameG={""}
+                                Change={""}
+                                Sign={""}
+                                EmailReg={""}
+                                PassReg={""}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
