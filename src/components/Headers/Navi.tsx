@@ -104,7 +104,7 @@ export default function Navi() {
                                 LogoG={"./images/logos/Google.svg"}
                                 NameG={"Google"}
                                 Change={"Dont have account yet?"}
-                                Sign={"Register here"}
+                                Sign ={"/"}
                                 EmailReg={""}
                                 PassReg={""}
                             />
