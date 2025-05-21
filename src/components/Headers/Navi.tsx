@@ -13,8 +13,8 @@ export default function Navi() {
                     </div>
                 </div>
             </div>
-            <div className="bg-[#1b1b1b] h-20 flex items-center">
-                <div className="flex justify-between items-center">
+            <div className="bg-[#1b1b1b] w-full h-20 flex items-center">
+                <div className="flex items-center w-full justify-between px-4">
                     <div className="flex items-center space-x-3">
                         <div>
                             <Image
@@ -69,8 +69,8 @@ export default function Navi() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex">
-                        <div>
+                    <div className="flex justify-center items-center space-x-4">
+                        <div className="cursor-pointer">
                             <Image
                                 src="./images/icons/heart.svg"
                                 alt={""}
@@ -78,7 +78,7 @@ export default function Navi() {
                                 height={24}
                             />
                         </div>
-                        <div>
+                        <div className=" cursor-pointer">
                             <Image
                                 src="./images/logos/ShoppingCart.svg"
                                 alt=""
@@ -88,7 +88,7 @@ export default function Navi() {
                         </div>
                         <div>
                             <Sign
-                                SignInSignUp={"Sign In"}
+                                SignInSignUp={"Sign in"}
                                 Logo={"./images/logos/SneakerLogo.svg"}
                                 Title={"Welcome back"}
                                 Subtitle={
@@ -101,10 +101,10 @@ export default function Navi() {
                                 Remember={"Remember "}
                                 ForgetP={"Forot Password"}
                                 ButtonSign={"Sign In"}
-                                LogoG={""}
-                                NameG={""}
-                                Change={""}
-                                Sign={""}
+                                LogoG={"./images/logos/Google.svg"}
+                                NameG={"Google"}
+                                Change={"Dont have account yet?"}
+                                Sign={"Register here"}
                                 EmailReg={""}
                                 PassReg={""}
                             />

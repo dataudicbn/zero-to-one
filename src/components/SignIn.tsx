@@ -62,7 +62,7 @@ export default function Sign({
         <>
             <Button
                 onClick={open}
-                className="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-black/30"
+                className="rounded-md cursor-pointer text-sm font-bold text-[14px] text-white"
             >
                 {SignInSignUp}
             </Button>
@@ -75,63 +75,85 @@ export default function Sign({
                 __demoMode
             >
                 <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4">
+                    <div className="flex min-h-full items-center justify-center p-10">
                         <DialogPanel
                             transition
-                            className="w-full max-w-md rounded-xl bg-white/5 p-6 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
+                            className="w-full max-w-md rounded-xl bg-white p-10 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
                         >
-                            <div className="flex justify-center py-4">
+                            <div className="flex justify-center pt-4">
                                 <Image
                                     src={Logo}
                                     alt=""
-                                    width={73}
-                                    height={64}
+                                    width={110}
+                                    height={96}
                                 />
                             </div>
-                            <DialogTitle
-                                as="h3"
-                                className="text-base/7 text-[16px]  font-semibold text-[#1b1b1b]"
-                            >
-                                {Title}
-                            </DialogTitle>
-                            <p className="text-sm/6 text-[12px] text-white/50">
-                                {Subtitle}
-                            </p>
-                            <div>
+                            <div className="py-6">
+                                <DialogTitle
+                                    as="h3"
+                                    className=" text-[20px]  font-semibold text-[#1b1b1b]"
+                                >
+                                    {Title}
+                                </DialogTitle>
+                                <p className="text-[14px] text-[#1b1b1b]">
+                                    {Subtitle}
+                                </p>
+                            </div>
+                            <div className="pb-4">
                                 <div>
-                                    <p className="py-1 text-[#1b1b1b] text-[14px]">Email</p>
-                                    <Input type="email" placeholder="Email Address"
-                                     className={`placeholder:text-[#A0a8b0] w-full py-1 rounded px-1 ${ClassName}`} />
+                                    <p className="py-1 text-[#1b1b1b] font-semibold text-[14px]">
+                                        Email
+                                    </p>
+                                    <Input
+                                        type="email"
+                                        placeholder="Email Address"
+                                        className={`placeholder:text-[#A0a8b0] placeholder:text-[16px] w-full py-3 rounded px-1 ${ClassName}`}
+                                    />
                                 </div>
                             </div>
-                            <div>
+                            <div className="">
                                 <p>{EmailReg}</p>
                                 <Input
                                     type={ConfirmEmail}
-                                    className={` w-full py-1 rounded px-1 ${ClassName}`}  
+                                    className={` w-full py-1 rounded px-1 ${ClassName}`}
                                 />
                             </div>
                             <div className="py-1 text-[#1b1b1b] text-[14px]">
                                 <div>
-                                    <p className="py-1">Password</p>
-                                    <Input type={"password"} placeholder="Password"
-                                    className={` placeholder:text-[#A0a8b0] w-full py-1 rounded px-1 ${ClassName}`}  />
+                                    <p className="py-1 text-[14px] font-semibold">
+                                        Password
+                                    </p>
+                                    <Input
+                                        type={"password"}
+                                        placeholder="Password"
+                                        className={` placeholder:text-[#A0a8b0] placeholder:text-[14px] py-3 w-full rounded px-1 ${ClassName}`}
+                                    />
                                 </div>
                                 <div>
                                     <p>{PassReg}</p>
                                     <Input
                                         type={ConfirmPass}
-                                        className={` ${ClassName}`} 
+                                        className={` ${ClassName}`}
                                     />
                                 </div>
                             </div>
-                            <div className="flex justify-between pt-2">
-                                <div className="flex">
-                                    <Input type="checkbox" className={`mr-1 ${ClassName}`} />
-                                 <p className="text-[#5f5f5f] text-[14px]" >{Remember}</p>  
+                            <div className="flex justify-between  pt-2">
+                                <div className="flex justify-center">
+                                    <Input
+                                        type="checkbox"
+                                        className={`mr-1 ${ClassName}`}
+                                    />
+                                    <p className="text-[#5f5f5f] pt-[2px] text-[14px]">
+                                        {Remember}
+                                    </p>
                                 </div>
                                 <div>
-                                    <a href="" className={` text-[#1b1b1b] text-[14px] ${ClassName}`}>{ForgetP}</a>
+                                    <a
+                                        href=""
+                                        className={` text-[#1b1b1b] text-[14px] ${ClassName}`}
+                                    >
+                                        {ForgetP}
+                                    </a>
                                 </div>
                             </div>
                             <div className="mt-4">
@@ -142,14 +164,18 @@ export default function Sign({
                                     {ButtonSign}
                                 </Button>
                             </div>
-                            <div>
-                                {LogoG}
-                                <p>{NameG}</p>
+                            <div className="pt-5">
+                                <div className="flex py-3 bg-[#fafafa] justify-center items-center">
+                                   <Image src={LogoG} alt="" width={24} height={24} />
+                                     <p>{NameG}</p>
+                                </div>
                             </div>
-                            <p>
-                                {Change}
-                                {Sign}
-                            </p>
+                            <div className="pt-6">
+                                <div className="flex space-x-1 items-center w-full justify-center ">
+                                    <div className="text-[#5f5f5f] text-[14px]">{Change}</div>
+                                    <div className="text-[#5e59ff] font-semibold text-[14px] underline">{Sign}</div>
+                                </div>
+                            </div>
                         </DialogPanel>
                     </div>
                 </div>
