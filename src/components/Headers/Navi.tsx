@@ -1,9 +1,30 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import DropDown from "../DropDown";
 import Sign from "../SignIn";
+import { useState } from "react";
+import Register from "../Register";
 
 export default function Navi() {
+    const [showSignIn, setShowSignIn] = useState(true);
+    const [showSignUp, setShowSignUp] = useState(false);
+
+    const openSignIn = () => {
+        setShowSignIn(true);
+        setShowSignUp(false);
+    };
+
+    const openSignUp = () => {
+        setShowSignIn(false);
+        setShowSignUp(true);
+    };
+
+    const closeAll = () => {
+        setShowSignIn(false);
+        setShowSignUp(false);
+    };
+
     return (
         <div>
             <div className="bg-[#5E59FF] justify-center w-full flex h-7">
@@ -86,29 +107,30 @@ export default function Navi() {
                                 height={24}
                             />
                         </div>
-                        <div>
-                            <Sign
-                                SignInSignUp={"Sign in"}
-                                Logo={"./images/logos/SneakerLogo.svg"}
-                                Title={"Welcome back"}
-                                Subtitle={
-                                    "Please enter your detail and find your look"
-                                }
-                                Email={"Email"}
-                                ConfirmEmail={"hidden"}
+                            {( showSignIn && <Sign
+                                SignInSignUp="Sign In"
+                                Logo="/images/logo.png"
+                                Title="Đăng nhập"
+                                Subtitle="Xin vui lòng đăng nhập để tiếp tục"
+                                Remember="Remember me"
+                                ForgetP="Quên mật khẩu?"
+                                ButtonSign="Đăng nhập"
+                                LogoG="/images/google-logo.png"
+                                NameG="Đăng nhập bằng Google"
+                                Change="Bạn chưa có tài khoản?"
+                                Sign="Sign In"
+                                ClassName=""
+                                onRegisterClick={openSignUp}
+                                onClose={closeAll}
+                                Email={""}
                                 Pass={""}
-                                ConfirmPass={`hidden`}
-                                Remember={"Remember "}
-                                ForgetP={"Forot Password"}
-                                ButtonSign={"Sign In"}
-                                LogoG={"./images/logos/Google.svg"}
-                                NameG={"Google"}
-                                Change={"Dont have account yet?"}
-                                Sign ={"/"}
-                                EmailReg={""}
-                                PassReg={""}
+                            /> )}
+                        {showSignUp && (
+                            <Register
+                                onClose={closeAll}
+                                onSignInClick={openSignIn}
                             />
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>

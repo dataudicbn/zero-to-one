@@ -7,7 +7,6 @@ import {
     Input,
 } from "@headlessui/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 type SignInProps = {
@@ -16,11 +15,7 @@ type SignInProps = {
     Title: string;
     Subtitle: string;
     Email: string;
-    EmailReg: string;
-    ConfirmEmail: string;
     Pass: string;
-    PassReg: string;
-    ConfirmPass: string;
     Remember: string;
     ForgetP: string;
     ButtonSign: string;
@@ -29,30 +24,29 @@ type SignInProps = {
     Change: string;
     Sign: string;
     ClassName?: string;
+    onRegisterClick?: () => void;
+    onClose?: () => void;
 };
 export default function Sign({
     Logo,
     Title,
     Subtitle,
-    // Email,
-    EmailReg,
-    ConfirmEmail,
-    PassReg,
-    ConfirmPass,
     Remember,
     ForgetP,
     ButtonSign,
     LogoG,
     NameG,
     Change,
-    Sign,
     SignInSignUp,
     ClassName = "",
+    onRegisterClick,
+    onClose,
 }: SignInProps) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     function open() {
         setIsOpen(true);
+        if (onClose) onClose();
     }
 
     function close() {
@@ -126,13 +120,6 @@ export default function Sign({
                                         />
                                     </div>
                                 </div>
-                                <div className="">
-                                    <p>{EmailReg}</p>
-                                    <Input
-                                        type={ConfirmEmail}
-                                        className={` w-full py-1 rounded px-1 ${ClassName}`}
-                                    />
-                                </div>
                                 <div className="py-1 text-[#1b1b1b] text-[14px]">
                                     <div>
                                         <p className="py-1 text-[14px] font-semibold">
@@ -142,13 +129,6 @@ export default function Sign({
                                             type={"password"}
                                             placeholder="Password"
                                             className={` placeholder:text-[#A0a8b0] placeholder:text-[14px] py-3 w-full rounded px-1 ${ClassName}`}
-                                        />
-                                    </div>
-                                    <div>
-                                        <p>{PassReg}</p>
-                                        <Input
-                                            type={ConfirmPass}
-                                            className={` ${ClassName}`}
                                         />
                                     </div>
                                 </div>
@@ -195,9 +175,16 @@ export default function Sign({
                                         <div className="text-[#5f5f5f] text-[14px]">
                                             {Change}
                                         </div>
-                                        <Link href={Sign} className="text-[#5e59ff] font-semibold text-[14px] underline">
-                                        Register here
-                                        </Link>
+                                        <Button
+                                            className="text-[#5e59ff] cursor-pointer font-semibold text-[14px] underline"
+                                            onClick={() => {
+                                                close();
+                                                if (onRegisterClick)
+                                                    onRegisterClick();
+                                            }}
+                                        >
+                                            Register here
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
